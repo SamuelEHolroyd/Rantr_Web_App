@@ -1,0 +1,10 @@
+.create {
+    text-align: center;
+    background-color: rgb(222, 48, 48);
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    font-size: 14px;
+    width: 150px;
+    block-size: 40px;
+}
