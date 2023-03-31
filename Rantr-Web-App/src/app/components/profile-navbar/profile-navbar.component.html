@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar bg topbar">
     <div class="container-fluid my-2">
         <div class="d-flex ms-5">
-        <a href="#" class="btn createthread pt-2">Create Thread</a>
+        <a routerLink="/create-thread"  class="btn createthread pt-2">Create Thread</a>
     </div>
         <div class="d-flex">
-        <a routerLink="profile" class="navbar-brand rantr">RANTR</a>
+        <a routerLink="/profile" class="navbar-brand rantr">RANTR</a>
     </div>
         <div class="d-flex me-5">
         <div class="dropdown">
@@ -12,8 +12,8 @@
               Username
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Account Details</a></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a routerLink="/account-details" class="dropdown-item">Account Details</a></li>
+              <li><a routerLink="/settings" class="dropdown-item">Settings</a></li>
               <li><a routerLink="" class="dropdown-item">Log Out</a></li>
             </ul>
           </div>
