@@ -1,9 +1,10 @@
 .rantr {
     font-size: 35pt;
-    color: rgb(222, 48, 48);
-    font-weight: 500;
+    transform: rotate(20deg);
 }
-
+.navbar{
+    height: 110px;
+}
 .createthread {
     text-align: center;
     background-color: rgb(222, 48, 48);
