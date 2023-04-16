@@ -1,0 +1,22 @@
+.account-details{
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 30px;
+    
+}
+.padding{
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-right:50px;
+}
+.text-border{
+    background-color: rgb(222, 48, 48);
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(222, 48, 48);
+    border-radius: .25rem;
+    color: white;
+}
+.text-details{
+    font-weight: 20px;
+}
