@@ -17,6 +17,7 @@ import { AccountDetailsLayoutComponent } from './layouts/account-details-layout/
 import { SettingLayoutComponent } from './layouts/setting-layout/setting-layout.component';
 import { CreateThreadsLayoutComponent } from './layouts/create-threads-layout/create-threads-layout.component';
 import { CreateThreadFormComponent } from './components/create-thread-form/create-thread-form.component';
+import { NotificationComponent } from './components/notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { CreateThreadFormComponent } from './components/create-thread-form/creat
     SettingLayoutComponent,
     CreateThreadsLayoutComponent,
     CreateThreadFormComponent,
+    NotificationComponent,
   ],
   imports: [
     BrowserModule,
