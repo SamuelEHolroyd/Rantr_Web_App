@@ -44,7 +44,7 @@ button:hover {
 .routerLink{
   text-decoration:none ;
 }
-container{
+.container{
   /* display: inline-block;  need to use this line to make data align side to side */
 
 }
