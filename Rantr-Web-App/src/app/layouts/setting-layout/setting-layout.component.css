@@ -16,4 +16,35 @@ button:hover {
 
 .round {
     border-radius: 50%;
-  }
+}
+
+/* luke below */
+.offcanvas-body{
+  width : 35%;
+  height : 750px;
+  background-color:rgb(222, 48, 48);
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+}
+.header{
+  text-decoration: solid;
+  text-align: left;
+  padding-left:10%;
+  padding-bottom:5%;
+}
+.col{
+  padding-left : 40%;
+  font-size: larger;
+}
+.row{
+  width:auto;
+  padding-bottom:5%;
+}
+.routerLink{
+  text-decoration:none ;
+}
+container{
+  /* display: inline-block;  need to use this line to make data align side to side */
+
+}
