@@ -14,9 +14,13 @@ import { FollowingThreadsLayoutComponent } from './layouts/following-threads-lay
 import { RecommendedThreadsLayoutComponent } from './layouts/recommended-threads-layout/recommended-threads-layout.component';
 import { MyThreadsLayoutComponent } from './layouts/my-threads-layout/my-threads-layout.component';
 import { AccountDetailsLayoutComponent } from './layouts/account-details-layout/account-details-layout.component';
-import { SettingLayoutComponent } from './layouts/setting-layout/setting-layout.component';
 import { CreateThreadsLayoutComponent } from './layouts/create-threads-layout/create-threads-layout.component';
 import { CreateThreadFormComponent } from './components/create-thread-form/create-thread-form.component';
+import { SettingLayoutComponent } from './layouts/settings-sidebar/setting-layout.component';
+import { SecurityAndAccountAccessComponent } from './layouts/settings-sidebar/security-and-account-access/security-and-account-access.component';
+import { PrivacyAndSafetyComponent } from './layouts/settings-sidebar/privacy-and-safety/privacy-and-safety.component';
+import { NotificationsComponent } from './layouts/settings-sidebar/notifications/notifications.component';
+import { AboutComponent } from './layouts/settings-sidebar/about/about.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +39,10 @@ import { CreateThreadFormComponent } from './components/create-thread-form/creat
     SettingLayoutComponent,
     CreateThreadsLayoutComponent,
     CreateThreadFormComponent,
+    SecurityAndAccountAccessComponent,
+    PrivacyAndSafetyComponent,
+    NotificationsComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
