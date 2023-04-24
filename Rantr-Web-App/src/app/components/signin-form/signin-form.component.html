@@ -1,4 +1,9 @@
 <form class="d-flex-container text-center pt-4" (ngSubmit)="signIn(inputUsername.value, inputPassword.value)" ngForm>
+  <ng-container *ngIf="accountDetailsChanged">
+    <div class="alert alert-success mt-4" role="alert">
+      Your account details were updated successfully. Please sign in again.
+    </div>
+  </ng-container>
   <div class="row mb-3 justify-content-center">
     <div class="col-sm-4 form-floating">
       <input

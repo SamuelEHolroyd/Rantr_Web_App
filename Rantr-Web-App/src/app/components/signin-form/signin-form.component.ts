@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
@@ -7,8 +7,16 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
   templateUrl: './signin-form.component.html',
   styleUrls: ['./signin-form.component.css']
 })
-export class SigninFormComponent {
-  constructor(private afAuth: AngularFireAuth, private router: Router) {
+export class SigninFormComponent implements OnInit {
+  accountDetailsChanged = false;
+
+  constructor(private afAuth: AngularFireAuth, private router: Router, private route: ActivatedRoute) {
+  }
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.accountDetailsChanged = this.router.getCurrentNavigation()?.extras.state?.['accountDetailsChanged'] || false;
+    });
   }
 
   async signIn(email: string, password: string) {

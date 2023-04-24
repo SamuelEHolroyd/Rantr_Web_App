@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./create-account-form.component.css'],
 })
 export class CreateAccountFormComponent {
-  constructor(private afAuth: AngularFireAuth, private router: Router) {}
+  constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore, private router: Router) {}
 
   async createAccount(
     email: string,
@@ -28,8 +29,14 @@ export class CreateAccountFormComponent {
       );
       if (result.user) {
         await result.user.updateProfile({ displayName: username });
+
+        // Create a document in Firestore
+        await this.firestore.collection('users').doc(result.user.uid).set({
+          email: email,
+          username: username,
+        });
       }
-      this.router.navigate(['/signin']);
+      this.router.navigate(['']);
     } catch (error: any) {
       alert(`Error: ${error.message}`);
     }
