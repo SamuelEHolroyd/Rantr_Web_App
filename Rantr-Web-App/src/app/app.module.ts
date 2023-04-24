@@ -17,6 +17,12 @@ import { AccountDetailsLayoutComponent } from './layouts/account-details-layout/
 import { SettingLayoutComponent } from './layouts/setting-layout/setting-layout.component';
 import { CreateThreadsLayoutComponent } from './layouts/create-threads-layout/create-threads-layout.component';
 import { CreateThreadFormComponent } from './components/create-thread-form/create-thread-form.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from '../environments/environment';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -34,11 +40,16 @@ import { CreateThreadFormComponent } from './components/create-thread-form/creat
     AccountDetailsLayoutComponent,
     SettingLayoutComponent,
     CreateThreadsLayoutComponent,
-    CreateThreadFormComponent,
+    CreateThreadFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
