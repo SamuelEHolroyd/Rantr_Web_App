@@ -20,3 +20,16 @@
 .text-details{
     font-weight: 20px;
 }
+
+.custom-btn {
+    font-weight: 500;
+    font-size: 15px;
+    color:#3ea6ff;
+    padding: 3px 3px;
+  }
+
+  hr {
+    border: none;
+    border-top: 2px solid rgb(119, 119, 119);
+    margin: 20px 0;
+  }

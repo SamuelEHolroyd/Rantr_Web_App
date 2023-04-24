@@ -9,6 +9,8 @@ import { MyThreadsLayoutComponent } from './layouts/my-threads-layout/my-threads
 import { RecommendedThreadsLayoutComponent } from './layouts/recommended-threads-layout/recommended-threads-layout.component';
 import { SettingLayoutComponent } from './layouts/setting-layout/setting-layout.component';
 import { SigninLayoutComponent } from './layouts/signin-layout/signin-layout.component';
+import { ChangePasswordLayoutComponent } from './layouts/change-password-layout/change-password-layout.component';
+import { ChangeUsernameLayoutComponent } from './layouts/change-username-layout/change-username-layout.component';
 
 const routes: Routes = [
   {path:'profile', component: HomepageLayoutComponent},
@@ -19,7 +21,9 @@ const routes: Routes = [
   {path:'account-details', component: AccountDetailsLayoutComponent},
   {path:'settings', component: SettingLayoutComponent},
   {path:'create-thread', component: CreateThreadsLayoutComponent},
-  {path:'', component: SigninLayoutComponent}
+  {path:'', component: SigninLayoutComponent},
+  {path:'change-password', component: ChangePasswordLayoutComponent},
+  {path:'change-username', component: ChangeUsernameLayoutComponent}
 ];
 
 @NgModule({

@@ -17,6 +17,10 @@ import { AccountDetailsLayoutComponent } from './layouts/account-details-layout/
 import { SettingLayoutComponent } from './layouts/setting-layout/setting-layout.component';
 import { CreateThreadsLayoutComponent } from './layouts/create-threads-layout/create-threads-layout.component';
 import { AccountDetailsComponent } from './components/account-details/account-details.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
+import { ChangePasswordLayoutComponent } from './layouts/change-password-layout/change-password-layout.component';
+import { ChangeUsernameComponent } from './components/change-username/change-username.component';
+import { ChangeUsernameLayoutComponent } from './layouts/change-username-layout/change-username-layout.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +39,10 @@ import { AccountDetailsComponent } from './components/account-details/account-de
     SettingLayoutComponent,
     CreateThreadsLayoutComponent,
     AccountDetailsComponent,
+    ChangePasswordComponent,
+    ChangePasswordLayoutComponent,
+    ChangeUsernameComponent,
+    ChangeUsernameLayoutComponent,
   ],
   imports: [
     BrowserModule,
