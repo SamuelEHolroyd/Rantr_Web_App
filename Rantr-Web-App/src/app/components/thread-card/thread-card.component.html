@@ -7,26 +7,26 @@
         </div>
         <div class="card-body">Content</div>
         <div class="card-footer text-center">
-          <button (click)="updateCount()" type="submit" class="btn me-1">👍
-            <div class="text">{{count}}</div>
+          <button (click)="updateCountThumbUp()" type="submit" class="btn me-1">👍
+            <div class="text">{{countThumbUp}}</div>
           </button>
-          <button type="submit" class="btn me-1">👎
-            <div class="text">0</div>
+          <button (click)="updateCountThumbDown()" type="submit" class="btn me-1">👎
+            <div class="text">{{countThumbDown}}</div>
           </button>
-          <button type="submit" class="btn me-1">😃
-            <div class="text">0</div>
+          <button (click)="updateCountSmile()" type="submit" class="btn me-1">😃
+            <div class="text">{{countSmile}}</div>
           </button>
-          <button type="submit" class="btn me-1">😑
-            <div class="text">0</div>
+          <button (click)="updateCountStraight()" type="submit" class="btn me-1">😑
+            <div class="text">{{countStraight}}</div>
           </button>
-          <button type="submit" class="btn me-1">😂
-            <div class="text">0</div>
+          <button (click)="updateCountLaugh()" type="submit" class="btn me-1">😂
+            <div class="text">{{countLaugh}}</div>
           </button>
-          <button type="submit" class="btn me-1">🤨
-            <div class="text">0</div>
+          <button (click)="updateCountQuestion()" type="submit" class="btn me-1">🤨
+            <div class="text">{{countQuestion}}</div>
           </button>
-          <button type="submit" class="btn">😍
-            <div class="text">0</div>
+          <button (click)="updateCountHeart()" type="submit" class="btn">😍
+            <div class="text">{{countHeart}}</div>
           </button>
         </div>
       </div>
