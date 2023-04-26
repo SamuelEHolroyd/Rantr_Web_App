@@ -1,5 +1,8 @@
 .rantr {
-    color: rgb(222, 48, 48);
-    font-size: 50pt;
-    padding-top: 5%;
+    font-size: 35pt;
+    transform: rotate(20deg);
+    padding-left: 560px;
+    padding-right: 560px;
+    margin-bottom: -45px;
+    margin-top: 30px;
 }
