@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+}
+
+.users-list {
+  width: 25%;
+  margin-right: 15px;
+}
+
+.users-list h2 {
+  margin-bottom: 15px;
+}
+
+.users-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.users-list li {
+  cursor: pointer;
+  padding: 8px;
+  background-color: rgb(222, 48, 48);
+  color: white;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.chat {
+  width: 75%;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #f8f8f8;
+}
+
+.messages {
+  max-height: 400px;
+  overflow-y: scroll;
+  margin-bottom: 15px;
+}
+
+.message-input {
+  display: flex;
+}
+
+.message-input input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.message-input button {
+  padding: 8px;
+  background-color: rgb(222, 48, 48);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.message-input button:hover {
+  background-color: rgb(180, 35, 35);
+}

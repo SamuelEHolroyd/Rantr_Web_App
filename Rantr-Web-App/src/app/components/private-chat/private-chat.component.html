@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="users-list">
+    <h2>Select a user to chat with:</h2>
+    <ul>
+      <li *ngFor="let user of users" (click)="selectChat(user)">{{ user.username }}</li>
+    </ul>
+  </div>
+
+  <div class="chat">
+    <h3 *ngIf="selectedChat">Chat with {{ selectedChat.username }}</h3>
+    <div class="messages" *ngIf="selectedChat">
+      <div *ngFor="let message of messages">
+        <strong>{{message.sender === currentUserUid ? 'You' : selectedChat.username}}: </strong>{{ message.content }}
+      </div>
+    </div>
+    <div class="message-input" *ngIf="selectedChat">
+      <input [(ngModel)]="newMessageContent" placeholder="Type your message" />
+      <button (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>
