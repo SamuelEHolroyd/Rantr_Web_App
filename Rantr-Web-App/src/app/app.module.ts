@@ -23,6 +23,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
 import {FormsModule} from "@angular/forms";
+import { ThreadDisplayCardComponent } from './components/thread-display-card/thread-display-card.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {FormsModule} from "@angular/forms";
     AccountDetailsLayoutComponent,
     SettingLayoutComponent,
     CreateThreadsLayoutComponent,
-    CreateThreadFormComponent
+    CreateThreadFormComponent,
+    ThreadDisplayCardComponent
   ],
   imports: [
     BrowserModule,
