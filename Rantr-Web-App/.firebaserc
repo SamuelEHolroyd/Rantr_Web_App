@@ -1,4 +1,13 @@
 {
+  "targets": {
+    "rantr-8c5dc": {
+      "hosting": {
+        "Rantr-Web-App": [
+          "rantr-8c5dc"
+        ]
+      }
+    }
+  },
   "projects": {
     "default": "rantr-8c5dc"
   }

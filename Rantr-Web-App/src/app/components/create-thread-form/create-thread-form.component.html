@@ -1,9 +1,23 @@
-<form class="d-flex-container text-center pt-5">
+<form class="d-flex-container text-center pt-5" (submit)="onSubmit(post.value, $event)">
   <div class="row pt-3 justify-content-center">
     <div class="col-sm-4 form-floating">
-      <textarea class="form-control threadBox" maxlength="300" placeholder="Post goes here" id="post"></textarea>
+      <textarea
+        class="form-control threadBox"
+        maxlength="300"
+        placeholder="Post goes here"
+        id="post"
+        #post
+      ></textarea>
       <label for="floatingTextarea" class="ps-4">Type your post here:</label>
-      <button routerLink="/my-threads" type="submit" class="btn create mt-5">Post</button>
+      <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+      <button
+        routerLink="/my-threads"
+        type="submit"
+        class="btn create mt-5"
+        [disabled]="!post.value"
+      >
+        Post
+      </button>
     </div>
   </div>
 </form>

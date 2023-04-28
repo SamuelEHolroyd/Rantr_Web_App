@@ -1,18 +1,19 @@
 <nav class="navbar navbar-expand-lg navbar bg topbar">
-    <div class="container-fluid my-2">
-        <div class="d-flex ms-5">
-        <a routerLink="/create-thread"  class="btn createthread pt-2">Create Thread</a>
+  <div class="container-fluid my-2">
+    <div class="d-flex ms-5">
+      <a routerLink="/create-thread"  class="btn createthread pt-2">Create Thread</a>
     </div>
-        <div class="d-flex">
-          <a routerLink="/profile" class="navbar-brand rantr">
-            <img src="assets/RANTR.png" height="100px">
-          </a>
+    <div class="d-flex">
+      <a routerLink="/profile" class="navbar-brand rantr">
+        <img src="assets/RANTR.png" height="100px">
+      </a>
     </div>
-        <div class="d-flex me-5">
-        <div class="dropdown">
-            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Username
-            </button>
+
+    <div class="d-flex me-5">
+      <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {{ username }} <!-- Replace the 'Username' text with '{{ username }}' -->
+        </button>
             <ul class="dropdown-menu">
               <li><a routerLink="/account-details" class="dropdown-item">Account Details</a></li>
               <li><a routerLink="/SecurityandAccountAcesss" class="dropdown-item">Settings</a></li>
@@ -21,4 +22,5 @@
           </div>
         </div>
     </div>
-  </nav>
+  </div>
+</nav>

@@ -21,6 +21,14 @@ import { SecurityAndAccountAccessComponent } from './layouts/settings-sidebar/se
 import { PrivacyAndSafetyComponent } from './layouts/settings-sidebar/privacy-and-safety/privacy-and-safety.component';
 import { NotificationsComponent } from './layouts/settings-sidebar/notifications/notifications.component';
 import { AboutComponent } from './layouts/settings-sidebar/about/about.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from '../environments/environment';
+import {FormsModule} from "@angular/forms";
+import { ThreadDisplayCardComponent } from './components/thread-display-card/thread-display-card.component';
+
 
 @NgModule({
   declarations: [
@@ -43,10 +51,17 @@ import { AboutComponent } from './layouts/settings-sidebar/about/about.component
     PrivacyAndSafetyComponent,
     NotificationsComponent,
     AboutComponent,
+    ThreadDisplayCardComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -94,6 +94,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "Rantr-Web-App:build:production",
+            "firebaseProject": "rantr-8c5dc",
+            "firebaseHostingSite": "rantr-8c5dc"
+          }
         }
       }
     }
