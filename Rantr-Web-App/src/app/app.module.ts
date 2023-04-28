@@ -28,6 +28,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
 import {FormsModule} from "@angular/forms";
 import { ThreadDisplayCardComponent } from './components/thread-display-card/thread-display-card.component';
+import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { ThreadDisplayCardComponent } from './components/thread-display-card/thr
     AngularFireAuthModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    AngularFirestoreModule,
     FormsModule
   ],
   providers: [],
