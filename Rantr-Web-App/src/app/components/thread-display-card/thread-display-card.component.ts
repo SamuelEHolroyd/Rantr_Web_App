@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-thread-display-card',
@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./thread-display-card.component.css']
 })
 export class ThreadDisplayCardComponent {
+  @Input() post: any;
   countThumbUp:number=0;
   countThumbDown:number=0;
   countSmile:number=0;
