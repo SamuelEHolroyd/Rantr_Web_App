@@ -22,8 +22,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
-import { FormsModule } from "@angular/forms";
-import { ThreadCardComponent } from './components/thread-card/thread-card.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -41,8 +40,7 @@ import { ThreadCardComponent } from './components/thread-card/thread-card.compon
     AccountDetailsLayoutComponent,
     SettingLayoutComponent,
     CreateThreadsLayoutComponent,
-    CreateThreadFormComponent,
-    ThreadCardComponent,
+    CreateThreadFormComponent
   ],
   imports: [
     BrowserModule,
