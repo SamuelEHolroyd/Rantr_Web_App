@@ -23,6 +23,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
 import {FormsModule} from "@angular/forms";
+import { PrivateChatComponent } from './components/private-chat/private-chat.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {FormsModule} from "@angular/forms";
     AccountDetailsLayoutComponent,
     SettingLayoutComponent,
     CreateThreadsLayoutComponent,
-    CreateThreadFormComponent
+    CreateThreadFormComponent,
+    PrivateChatComponent
   ],
   imports: [
     BrowserModule,
