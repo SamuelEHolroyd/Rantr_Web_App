@@ -35,20 +35,26 @@ export class CreateThreadFormComponent {
     const fileRef = this.storage.ref(filePath);
     const task = this.storage.upload(filePath, this.imageFile);
 
-    task
-      .snapshotChanges()
-      .pipe(
-        finalize(() =>
-          fileRef.getDownloadURL().subscribe(async (imageUrl: string) => {
-            await this.firestore.collection('threads').add({
-              text: postText,
-              imageUrl: imageUrl,
-              timestamp: new Date(),
-            });
-            this.router.navigate(['/my-threads']);
-          })
-        )
-      )
-      .subscribe();
+    const uploadAndStoreData = async () => {
+      return new Promise<void>(async (resolve) => {
+        task.snapshotChanges()
+          .pipe(
+            finalize(() => {
+              fileRef.getDownloadURL().subscribe(async (imageUrl: string) => {
+                await this.firestore.collection('posts').add({
+                  postText: postText,
+                  postImg: imageUrl,
+                  timestamp: new Date(),
+                });
+                await this.router.navigate(['/my-threads']);
+                resolve();
+              });
+            })
+          )
+          .subscribe();
+      });
+    };
+
+    await uploadAndStoreData();
   }
 }
