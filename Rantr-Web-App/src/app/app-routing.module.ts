@@ -7,8 +7,12 @@ import { FollowingThreadsLayoutComponent } from './layouts/following-threads-lay
 import { HomepageLayoutComponent } from './layouts/homepage-layout/homepage-layout.component';
 import { MyThreadsLayoutComponent } from './layouts/my-threads-layout/my-threads-layout.component';
 import { RecommendedThreadsLayoutComponent } from './layouts/recommended-threads-layout/recommended-threads-layout.component';
-import { SettingLayoutComponent } from './layouts/setting-layout/setting-layout.component';
 import { SigninLayoutComponent } from './layouts/signin-layout/signin-layout.component';
+import { SettingLayoutComponent } from './layouts/settings-sidebar/setting-layout.component';
+import { SecurityAndAccountAccessComponent } from './layouts/settings-sidebar/security-and-account-access/security-and-account-access.component';
+import { AboutComponent } from './layouts/settings-sidebar/about/about.component';
+import { PrivacyAndSafetyComponent } from './layouts/settings-sidebar/privacy-and-safety/privacy-and-safety.component';
+import { NotificationsComponent } from './layouts/settings-sidebar/notifications/notifications.component';
 
 const routes: Routes = [
   {path:'profile', component: HomepageLayoutComponent},
@@ -17,9 +21,13 @@ const routes: Routes = [
   {path:'recommended-threads', component: RecommendedThreadsLayoutComponent},
   {path:'my-threads', component: MyThreadsLayoutComponent},
   {path:'account-details', component: AccountDetailsLayoutComponent},
-  {path:'settings', component: SettingLayoutComponent},
   {path:'create-thread', component: CreateThreadsLayoutComponent},
-  {path:'', component: SigninLayoutComponent}
+  {path:'', component: SigninLayoutComponent},
+  {path:'SecurityandAccountAcesss', component: SecurityAndAccountAccessComponent},
+  {path:'About', component: AboutComponent},
+  {path:'PrivacyandSafety',component:PrivacyAndSafetyComponent},
+  {path:'Notifications',component:NotificationsComponent},
+
 ];
 
 @NgModule({
