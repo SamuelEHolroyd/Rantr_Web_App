@@ -19,7 +19,7 @@ export class MyThreadsLayoutComponent implements OnInit {
   async ngOnInit() {
     const user = await this.afAuth.currentUser;
     if (user) {
-      this.userPosts = this.firestore.collection('posts', ref => ref.where('userId', '==', user.uid)).valueChanges();
+      this.userPosts = this.firestore.collection('posts', ref => ref.where('userId', '==', user.uid).orderBy('timestamp', 'desc')).valueChanges();
     }
   }
 }
