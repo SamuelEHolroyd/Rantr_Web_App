@@ -1,5 +1,3 @@
-.rantr {
-    color: rgb(222, 48, 48);
-    font-size: 50pt;
-    padding-top: 5%;
+.logo {
+    transform: rotate(20deg);
 }

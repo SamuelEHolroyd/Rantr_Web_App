@@ -1,3 +1,9 @@
 <app-profile-navbar></app-profile-navbar>
 <app-threadlist-navbar></app-threadlist-navbar>
-<app-thread-card></app-thread-card>
+      <ng-container *ngIf="userPosts | async as posts">
+        <div class="py-4">
+          <app-thread-display-card *ngFor="let post of posts" [post]="post"></app-thread-display-card>
+        </div>
+      </ng-container>
+
+
