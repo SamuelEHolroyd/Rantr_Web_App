@@ -64,18 +64,28 @@ export class CreateThreadFormComponent {
     const fileRef = this.storage.ref(filePath);
     const task = this.storage.upload(filePath, this.imageFile);
 
+    const postId=this.firestore.createId();
+
     const uploadAndStoreData = async () => {
       return new Promise<void>(async (resolve) => {
         task.snapshotChanges()
           .pipe(
             finalize(() => {
               fileRef.getDownloadURL().subscribe(async (imageUrl: string) => {
-                await this.firestore.collection('posts').add({
+                await this.firestore.collection('posts').doc(postId).set({
                   postText: postText,
                   postImg: imageUrl,
                   timestamp: new Date(),
                   userId: userId,
                   username: username,
+                  countThumbUp:0,
+                  countThumbDown:0,
+                  countSmile:0,
+                  countStraight:0,
+                  countLaugh:0,
+                  countQuestion:0,
+                  countHeart:0,
+                  postId:postId
                 });
                 await this.router.navigate(['/my-threads']);
                 resolve();

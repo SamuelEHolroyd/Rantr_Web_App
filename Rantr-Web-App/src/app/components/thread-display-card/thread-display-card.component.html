@@ -4,7 +4,15 @@
       <div class="card">
         <div class="card-header">
           <span class="username">{{ post.username }}</span>
-          <div class="text">{{ post.timestamp.toDate() | date: 'short' }}</div>
+          <div class="text">{{ post.timestamp.toDate() | date: 'short' }}
+              <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              </button>
+                  <ul class="dropdown-menu">
+                    <li><button (click)="deletePost(post.postId)" type="submit" class="dropdown-item btn me-3">
+                      Delete Post
+                    </button></li>
+                  </ul>
+          </div>
         </div>
         <div class="card-body">{{ post.postText }}</div>
         <div class="row justify-content-center">
@@ -12,25 +20,25 @@
         </div>
         <div class="card-footer text-center">
             <button (click)="updateCountThumbUp()" type="submit" class="btn me-3">👍
-              <div class="text">{{countThumbUp}}</div>
+              <div class="text">{{post.countThumbUp}}</div>
             </button>
             <button (click)="updateCountThumbDown()" type="submit" class="btn me-3">👎
-              <div class="text">{{countThumbDown}}</div>
+              <div class="text">{{post.countThumbDown}}</div>
             </button>
             <button (click)="updateCountSmile()" type="submit" class="btn me-3">😃
-              <div class="text">{{countSmile}}</div>
+              <div class="text">{{post.countSmile}}</div>
             </button>
             <button (click)="updateCountStraight()" type="submit" class="btn me-3">😑
-              <div class="text">{{countStraight}}</div>
+              <div class="text">{{post.countStraight}}</div>
             </button>
             <button (click)="updateCountLaugh()" type="submit" class="btn me-3">😂
-              <div class="text">{{countLaugh}}</div>
+              <div class="text">{{post.countLaugh}}</div>
             </button>
             <button (click)="updateCountQuestion()" type="submit" class="btn me-3">🤨
-              <div class="text">{{countQuestion}}</div>
+              <div class="text">{{post.countQuestion}}</div>
             </button>
             <button (click)="updateCountHeart()" type="submit" class="btn">😍
-              <div class="text">{{countHeart}}</div>
+              <div class="text">{{post.countHeart}}</div>
             </button>
           </div>
         </div>
