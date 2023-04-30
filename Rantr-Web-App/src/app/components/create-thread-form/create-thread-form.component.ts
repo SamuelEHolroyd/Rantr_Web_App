@@ -3,7 +3,8 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { Router } from '@angular/router';
 import { finalize } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import {AngularFireAuth} from "@angular/fire/compat/auth";
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-create-thread-form',
@@ -33,6 +34,16 @@ export class CreateThreadFormComponent {
     this.imageFile = event.target.files[0];
   }
 
+  async getUsername(userId: string): Promise<string> {
+    const userDocSnap = await firstValueFrom(this.firestore.collection('users').doc(userId).get());
+    if (userDocSnap.exists) {
+      return (userDocSnap.data() as any).username;
+    } else {
+      return 'Anonymous';
+    }
+  }
+
+
   async onSubmit(postText: string, event: Event) {
     event.preventDefault();
 
@@ -47,6 +58,7 @@ export class CreateThreadFormComponent {
       return;
     }
     const userId = user.uid;
+    const username = await this.getUsername(userId);
 
     const filePath = `images/${new Date().getTime()}_${this.imageFile.name}`;
     const fileRef = this.storage.ref(filePath);
@@ -62,7 +74,8 @@ export class CreateThreadFormComponent {
                   postText: postText,
                   postImg: imageUrl,
                   timestamp: new Date(),
-                  userId: userId
+                  userId: userId,
+                  username: username,
                 });
                 await this.router.navigate(['/my-threads']);
                 resolve();

@@ -19,7 +19,7 @@ export class RecommendedThreadsLayoutComponent {
   async ngOnInit() {
     const user = await this.afAuth.currentUser;
     if (user) {
-      this.userPosts = this.firestore.collection('posts').valueChanges();
+      this.userPosts = this.firestore.collection('posts', ref => ref.orderBy('timestamp', 'desc')).valueChanges();
     }
   }
 }

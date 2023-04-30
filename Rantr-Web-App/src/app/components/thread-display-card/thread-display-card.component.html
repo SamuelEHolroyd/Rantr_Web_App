@@ -1,15 +1,16 @@
 <div class="d-flex-container">
-<div class="row justify-content-center">
-  <div class="col-sm-5">
-  <div class="card">
-    <div class="card-header">{{ post.username }}
-      <div class="text">{{ post.timestamp.toDate() | date: 'short' }}</div>
-    </div>
-    <div class="card-body">{{ post.postText }}</div>
-    <div class="row justify-content-center">
-      <img class="card-img-bottom" [src]="post.postImg" alt="">
-    </div>
-    <div class="card-footer text-center">
+  <div class="row justify-content-center">
+    <div class="col-sm-5">
+      <div class="card">
+        <div class="card-header">
+          <span class="username">{{ post.username }}</span>
+          <div class="text">{{ post.timestamp.toDate() | date: 'short' }}</div>
+        </div>
+        <div class="card-body">{{ post.postText }}</div>
+        <div class="row justify-content-center">
+          <img class="card-img-bottom" [src]="post.postImg" alt="">
+        </div>
+        <div class="card-footer text-center">
             <button (click)="updateCountThumbUp()" type="submit" class="btn me-3">👍
               <div class="text">{{countThumbUp}}</div>
             </button>
