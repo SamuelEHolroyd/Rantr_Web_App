@@ -1,4 +1,6 @@
-<div class="col-12 col-md-8">
+<div class="d-flex-container">
+<div class="row justify-content-center">
+  <div class="col-sm-5">
   <div class="card">
     <div class="card-header">{{ post.username }}
       <div class="text">{{ post.timestamp.toDate() | date: 'short' }}</div>
@@ -8,22 +10,22 @@
       <img class="card-img-bottom" [src]="post.postImg" alt="">
     </div>
     <div class="card-footer text-center">
-            <button (click)="updateCountThumbUp()" type="submit" class="btn me-1">👍
+            <button (click)="updateCountThumbUp()" type="submit" class="btn me-3">👍
               <div class="text">{{countThumbUp}}</div>
             </button>
-            <button (click)="updateCountThumbDown()" type="submit" class="btn me-1">👎
+            <button (click)="updateCountThumbDown()" type="submit" class="btn me-3">👎
               <div class="text">{{countThumbDown}}</div>
             </button>
-            <button (click)="updateCountSmile()" type="submit" class="btn me-1">😃
+            <button (click)="updateCountSmile()" type="submit" class="btn me-3">😃
               <div class="text">{{countSmile}}</div>
             </button>
-            <button (click)="updateCountStraight()" type="submit" class="btn me-1">😑
+            <button (click)="updateCountStraight()" type="submit" class="btn me-3">😑
               <div class="text">{{countStraight}}</div>
             </button>
-            <button (click)="updateCountLaugh()" type="submit" class="btn me-1">😂
+            <button (click)="updateCountLaugh()" type="submit" class="btn me-3">😂
               <div class="text">{{countLaugh}}</div>
             </button>
-            <button (click)="updateCountQuestion()" type="submit" class="btn me-1">🤨
+            <button (click)="updateCountQuestion()" type="submit" class="btn me-3">🤨
               <div class="text">{{countQuestion}}</div>
             </button>
             <button (click)="updateCountHeart()" type="submit" class="btn">😍
@@ -32,4 +34,6 @@
           </div>
         </div>
     </div>
+  </div>
+</div>
 
