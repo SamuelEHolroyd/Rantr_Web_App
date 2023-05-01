@@ -1,5 +1,6 @@
 
 import { Component, Input } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 
@@ -11,7 +12,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 export class ThreadDisplayCardComponent {
   @Input() post: any;
 
-  constructor(private firestore: AngularFirestore) {}
+  constructor(private firestore: AngularFirestore,private afAuth: AngularFireAuth) {}
 
   private isCountedThumbUp: boolean=false;
   private isCountedThumbDown: boolean=false;
@@ -50,7 +51,18 @@ export class ThreadDisplayCardComponent {
     this.isCountedHeart = !this.isCountedHeart;
   }
 
-  public deletePost(id:string){
-    this.firestore.collection('posts').doc(id).delete();
+  public async deletePost(id:string){
+    const user = await this.afAuth.currentUser;
+    if (!user) {
+      alert('User not found.');
+      return;
+    }
+    const userId = user.uid;
+    if(userId==this.post.userId) {
+      this.firestore.collection('posts').doc(id).delete();
+    }
+    else{
+      alert('You do not have the authorization to remove this post.');
+    }
   }
 }
