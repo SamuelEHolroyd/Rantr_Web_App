@@ -28,6 +28,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
 import {FormsModule} from "@angular/forms";
 import { ThreadDisplayCardComponent } from './components/thread-display-card/thread-display-card.component';
+import { SettingsNavbarComponent } from './components/settings-navbar/settings-navbar.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { ThreadDisplayCardComponent } from './components/thread-display-card/thr
     PrivacyAndSafetyComponent,
     NotificationsComponent,
     AboutComponent,
-    ThreadDisplayCardComponent
+    ThreadDisplayCardComponent,
+    SettingsNavbarComponent
 
   ],
   imports: [
