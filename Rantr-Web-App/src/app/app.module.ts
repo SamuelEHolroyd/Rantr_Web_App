@@ -25,10 +25,9 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from "@angular/forms";
 import { ThreadDisplayCardComponent } from './components/thread-display-card/thread-display-card.component';
 import { SettingsNavbarComponent } from './components/settings-navbar/settings-navbar.component';
-import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 
 
 @NgModule({
@@ -62,7 +61,6 @@ import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
     AngularFireAuthModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
-    AngularFirestoreModule,
     FormsModule
   ],
   providers: [],
