@@ -46,12 +46,7 @@ export class CreateThreadFormComponent {
 
   async onSubmit(postText: string, event: Event) {
     event.preventDefault();
-
-    if (!this.imageFile) {
-      alert('Please select an image to upload.');
-      return;
-    }
-
+  
     const user = await this.afAuth.currentUser;
     if (!user) {
       alert('User not found.');
@@ -59,43 +54,46 @@ export class CreateThreadFormComponent {
     }
     const userId = user.uid;
     const username = await this.getUsername(userId);
-
-    const filePath = `images/${new Date().getTime()}_${this.imageFile.name}`;
-    const fileRef = this.storage.ref(filePath);
-    const task = this.storage.upload(filePath, this.imageFile);
-
-    const postId=this.firestore.createId();
-
-    const uploadAndStoreData = async () => {
-      return new Promise<void>(async (resolve) => {
-        task.snapshotChanges()
-          .pipe(
-            finalize(() => {
-              fileRef.getDownloadURL().subscribe(async (imageUrl: string) => {
-                await this.firestore.collection('posts').doc(postId).set({
-                  postText: postText,
-                  postImg: imageUrl,
-                  timestamp: new Date(),
-                  userId: userId,
-                  username: username,
-                  countThumbUp:0,
-                  countThumbDown:0,
-                  countSmile:0,
-                  countStraight:0,
-                  countLaugh:0,
-                  countQuestion:0,
-                  countHeart:0,
-                  postId:postId
+  
+    let imageUrl: string | undefined = undefined;
+    if (this.imageFile) {
+      const filePath = `images/${new Date().getTime()}_${this.imageFile.name}`;
+      const fileRef = this.storage.ref(filePath);
+      const task = this.storage.upload(filePath, this.imageFile);
+  
+      const uploadAndStoreData = async () => {
+        return new Promise<void>(async (resolve) => {
+          task.snapshotChanges()
+            .pipe(
+              finalize(() => {
+                fileRef.getDownloadURL().subscribe(async (url: string) => {
+                  imageUrl = url;
+                  resolve();
                 });
-                await this.router.navigate(['/my-threads']);
-                resolve();
-              });
-            })
-          )
-          .subscribe();
-      });
-    };
-
-    await uploadAndStoreData();
+              })
+            )
+            .subscribe();
+        });
+      };
+      await uploadAndStoreData();
+    }
+  
+    const postId=this.firestore.createId();
+    await this.firestore.collection('posts').doc(postId).set({
+      postText: postText,
+      postImg: imageUrl,
+      timestamp: new Date(),
+      userId: userId,
+      username: username,
+      countThumbUp:0,
+      countThumbDown:0,
+      countSmile:0,
+      countStraight:0,
+      countLaugh:0,
+      countQuestion:0,
+      countHeart:0,
+      postId:postId
+    });
+    await this.router.navigate(['/my-threads']);
   }
 }
