@@ -22,7 +22,7 @@ export class SigninFormComponent implements OnInit {
   async signIn(email: string, password: string) {
     try {
       await this.afAuth.signInWithEmailAndPassword(email, password);
-      this.router.navigate(['/profile']);
+      this.router.navigate(['/my-threads']);
     } catch (error: any) {
       // Display an error message if the user is not found
       if (error.code === 'auth/user-not-found') {

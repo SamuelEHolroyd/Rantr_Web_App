@@ -14,7 +14,6 @@ import { PrivacyAndSafetyComponent } from './layouts/settings-sidebar/privacy-an
 import { NotificationsComponent } from './layouts/settings-sidebar/notifications/notifications.component';
 
 const routes: Routes = [
-  {path:'profile', component: HomepageLayoutComponent},
   {path:'create-account', component: CreateAccountLayoutComponent},
   {path:'recommended-threads', component: RecommendedThreadsLayoutComponent},
   {path:'my-threads', component: MyThreadsLayoutComponent},
