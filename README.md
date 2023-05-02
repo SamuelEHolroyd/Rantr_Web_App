@@ -1,6 +1,6 @@
 # Rantr
 
-Rantr is a social media web application that allows users to create posts and share them on their profiles. Users can also react to posts anonymously using emojis. Rantr is developed by a team of eight members as a project for [insert course name or organization name here].
+Rantr is a social media web application that allows users to create posts and share them on their profiles. Users can also react to posts anonymously using emojis. Rantr is developed by a team of eight members as a project for CS 230.
 
 # Features
 Create posts and share them on your profile.
@@ -35,13 +35,11 @@ ng serve
 Navigate to http://localhost:4200/ in your browser.
 
 # Screenshots
-
-<img width="1531" alt="Screen Shot 2023-05-02 at 4 39 13 PM" src="https://user-images.githubusercontent.com/98341162/235781251-3453946b-00d3-41a4-b415-d9d0ab14dffc.png">
-<img width="1531" alt="Screen Shot 2023-05-02 at 4 39 29 PM" src="https://user-images.githubusercontent.com/98341162/235781286-caac0a03-5c55-40e0-866c-f71eed4864df.png"> 
-<img width="1531" alt="Screen Shot 2023-05-02 at 4 39 50 PM" src="https://user-images.githubusercontent.com/98341162/235781452-69fa30fd-22f5-4b6e-a6b3-c5f00f4a7596.png">
-<img width="1531" alt="Screen Shot 2023-05-02 at 4 40 30 PM" src="https://user-images.githubusercontent.com/98341162/235781478-dadd1ef5-77a4-45f4-8621-d2cf082a2b7c.png">
-<img width="1531" alt="Screen Shot 2023-05-02 at 4 40 36 PM" src="https://user-images.githubusercontent.com/98341162/235781497-aabc98e9-0a40-4fbe-95df-4ac7cb498457.png">
-
+<img width="960" alt="ranter-1" src="https://user-images.githubusercontent.com/122549297/235784467-294298dd-60aa-45d4-9bea-a8e9567358d0.png">
+<img width="960" alt="ranter-2" src="https://user-images.githubusercontent.com/122549297/235784485-a333b2ce-705c-47f3-bd50-d7a0f24341bb.png">
+<img width="960" alt="rantr-3" src="https://user-images.githubusercontent.com/122549297/235784529-181a8655-8f13-4d0e-b2e0-f5fb7196426a.png">
+<img width="959" alt="ranter-4" src="https://user-images.githubusercontent.com/122549297/235784560-ec050cd8-9f88-4680-93e8-28229753d2de.png">
+<img width="960" alt="ranter-5" src="https://user-images.githubusercontent.com/122549297/235784586-ae2a3319-8797-43bc-b1e2-b6fe580da0ed.png"
 
 
 # Contributors
