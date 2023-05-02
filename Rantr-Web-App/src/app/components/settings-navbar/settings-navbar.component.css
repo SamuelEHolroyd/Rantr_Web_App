@@ -1,0 +1,21 @@
+.rantr {
+    font-size: 35pt;
+    transform: rotate(20deg);
+    margin-left: 50px;
+}
+.navbar{
+    height: 110px;
+}
+.createthread {
+    text-align: center;
+    background-color: rgb(222, 48, 48);
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    font-size: 14px;
+    width: 120px;
+    block-size: 40px;
+  }
+  .dropdown{
+    margin-right: 100px;
+  }
