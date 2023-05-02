@@ -11,10 +11,10 @@
                     <li><button (click)="deletePost(post.postId)" type="submit" class="dropdown-item btn me-3">
                       Delete Post
                     </button></li>
-                    <li><button (click)="deletePost(post.postId)" type="submit" class="dropdown-item btn me-3">
+                    <li><button type="submit" class="dropdown-item btn me-3">
                       Share
                     </button></li>
-                    <li><button (click)="deletePost(post.postId)" type="submit" class="dropdown-item btn me-3">
+                    <li><button type="submit" class="dropdown-item btn me-3">
                       Report
                     </button></li>
                   </ul>
@@ -25,25 +25,25 @@
           <img class="card-img-bottom" [src]="post.postImg" alt="">
         </div>
         <div class="card-footer text-center">
-            <button (click)="updateCountThumbUp()" type="submit" class="btn me-3">👍
+            <button (click)="updateCountThumbUp(post.postId)" type="submit" class="btn me-3">👍
               <div class="text">{{post.countThumbUp}}</div>
             </button>
-            <button (click)="updateCountThumbDown()" type="submit" class="btn me-3">👎
+            <button (click)="updateCountThumbDown(post.postId)" type="submit" class="btn me-3">👎
               <div class="text">{{post.countThumbDown}}</div>
             </button>
-            <button (click)="updateCountSmile()" type="submit" class="btn me-3">😃
+            <button (click)="updateCountSmile(post.postId)" type="submit" class="btn me-3">😃
               <div class="text">{{post.countSmile}}</div>
             </button>
-            <button (click)="updateCountStraight()" type="submit" class="btn me-3">😑
+            <button (click)="updateCountStraight(post.postId)" type="submit" class="btn me-3">😑
               <div class="text">{{post.countStraight}}</div>
             </button>
-            <button (click)="updateCountLaugh()" type="submit" class="btn me-3">😂
+            <button (click)="updateCountLaugh(post.postId)" type="submit" class="btn me-3">😂
               <div class="text">{{post.countLaugh}}</div>
             </button>
-            <button (click)="updateCountQuestion()" type="submit" class="btn me-3">🤨
+            <button (click)="updateCountQuestion(post.postId)" type="submit" class="btn me-3">🤨
               <div class="text">{{post.countQuestion}}</div>
             </button>
-            <button (click)="updateCountHeart()" type="submit" class="btn">😍
+            <button (click)="updateCountHeart(post.postId)" type="submit" class="btn">😍
               <div class="text">{{post.countHeart}}</div>
             </button>
           </div>
