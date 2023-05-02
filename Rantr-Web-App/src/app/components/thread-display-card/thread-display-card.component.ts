@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+
+import { Component, Input } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+
 
 @Component({
   selector: 'app-thread-display-card',
@@ -6,13 +10,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./thread-display-card.component.css']
 })
 export class ThreadDisplayCardComponent {
-  countThumbUp:number=0;
-  countThumbDown:number=0;
-  countSmile:number=0;
-  countStraight:number=0;
-  countLaugh:number=0;
-  countQuestion:number=0;
-  countHeart:number=0;
+  @Input() post: any;
+
+  constructor(private firestore: AngularFirestore,private afAuth: AngularFireAuth) {}
 
   private isCountedThumbUp: boolean=false;
   private isCountedThumbDown: boolean=false;
@@ -23,31 +23,46 @@ export class ThreadDisplayCardComponent {
   private isCountedHeart: boolean=false;
 
   public updateCountThumbUp() {
-    this.countThumbUp += this.isCountedThumbUp? -1: 1;
+    this.post.countThumbUp += this.isCountedThumbUp? -1: 1;
     this.isCountedThumbUp = !this.isCountedThumbUp;
   }
   public updateCountThumbDown() {
-    this.countThumbDown += this.isCountedThumbDown? -1: 1;
+    this.post.countThumbDown += this.isCountedThumbDown? -1: 1;
     this.isCountedThumbDown = !this.isCountedThumbDown;
   }
   public updateCountSmile() {
-    this.countSmile += this.isCountedSmile? -1: 1;
+    this.post.countSmile += this.isCountedSmile? -1: 1;
     this.isCountedSmile = !this.isCountedSmile;
   }
   public updateCountStraight() {
-    this.countStraight += this.isCountedStraight? -1: 1;
+    this.post.countStraight += this.isCountedStraight? -1: 1;
     this.isCountedStraight = !this.isCountedStraight;
   }
   public updateCountLaugh() {
-    this.countLaugh += this.isCountedLaugh? -1: 1;
+    this.post.countLaugh += this.isCountedLaugh? -1: 1;
     this.isCountedLaugh = !this.isCountedLaugh;
   }
   public updateCountQuestion() {
-    this.countQuestion += this.isCountedQuestion? -1: 1;
+    this.post.countQuestion += this.isCountedQuestion? -1: 1;
     this.isCountedQuestion = !this.isCountedQuestion;
   }
   public updateCountHeart() {
-    this.countHeart += this.isCountedHeart? -1: 1;
+    this.post.countHeart += this.isCountedHeart? -1: 1;
     this.isCountedHeart = !this.isCountedHeart;
+  }
+
+  public async deletePost(id:string){
+    const user = await this.afAuth.currentUser;
+    if (!user) {
+      alert('User not found.');
+      return;
+    }
+    const userId = user.uid;
+    if(userId==this.post.userId) {
+      this.firestore.collection('posts').doc(id).delete();
+    }
+    else{
+      alert('You do not have the authorization to remove this post.');
+    }
   }
 }

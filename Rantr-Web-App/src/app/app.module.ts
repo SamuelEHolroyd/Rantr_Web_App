@@ -10,7 +10,6 @@ import { HomepageLayoutComponent } from './layouts/homepage-layout/homepage-layo
 import { SigninFormComponent } from './components/signin-form/signin-form.component';
 import { CreateAccountFormComponent } from './components/create-account-form/create-account-form.component';
 import { CreateAccountLayoutComponent } from './layouts/create-account-layout/create-account-layout.component';
-import { FollowingThreadsLayoutComponent } from './layouts/following-threads-layout/following-threads-layout.component';
 import { RecommendedThreadsLayoutComponent } from './layouts/recommended-threads-layout/recommended-threads-layout.component';
 import { MyThreadsLayoutComponent } from './layouts/my-threads-layout/my-threads-layout.component';
 import { AccountDetailsLayoutComponent } from './layouts/account-details-layout/account-details-layout.component';
@@ -29,6 +28,7 @@ import { environment } from '../environments/environment';
 import {FormsModule} from "@angular/forms";
 import { ThreadDisplayCardComponent } from './components/thread-display-card/thread-display-card.component';
 import { SettingsNavbarComponent } from './components/settings-navbar/settings-navbar.component';
+import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 
 
 @NgModule({
@@ -41,7 +41,6 @@ import { SettingsNavbarComponent } from './components/settings-navbar/settings-n
     SigninFormComponent,
     CreateAccountFormComponent,
     CreateAccountLayoutComponent,
-    FollowingThreadsLayoutComponent,
     RecommendedThreadsLayoutComponent,
     MyThreadsLayoutComponent,
     AccountDetailsLayoutComponent,
@@ -63,6 +62,7 @@ import { SettingsNavbarComponent } from './components/settings-navbar/settings-n
     AngularFireAuthModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    AngularFirestoreModule,
     FormsModule
   ],
   providers: [],

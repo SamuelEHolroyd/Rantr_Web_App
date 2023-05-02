@@ -3,7 +3,7 @@ header{
     text-decoration: solid;
     font-size: larger;
     font-weight: 750 ;
-    position:relative;
+    position: relative;
     padding-right:30%;
 
 }
@@ -20,3 +20,9 @@ header{
     width: 75%;
     /* Additional styles for the main content go here */
   }
+
+p {
+  text-align: center;
+  padding-right:30%;
+  position: relative;
+}
