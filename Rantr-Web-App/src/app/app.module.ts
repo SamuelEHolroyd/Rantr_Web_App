@@ -29,6 +29,7 @@ import { environment } from '../environments/environment';
 import {FormsModule} from "@angular/forms";
 import { ThreadDisplayCardComponent } from './components/thread-display-card/thread-display-card.component';
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
+import { ShareButtonComponent } from './components/thread-display-card/share-button/share-button.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
     PrivacyAndSafetyComponent,
     NotificationsComponent,
     AboutComponent,
-    ThreadDisplayCardComponent
+    ThreadDisplayCardComponent,
+    ShareButtonComponent
 
   ],
   imports: [
