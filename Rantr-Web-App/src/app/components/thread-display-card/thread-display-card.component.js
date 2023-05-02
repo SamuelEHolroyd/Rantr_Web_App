@@ -84,8 +84,6 @@ export default function App() {
 
   return (
     <Container>
-      <h1>Share Feature Implementation</h1>
-      <h2>By: Danny Sasse</h2>
       <ShareContainer>
         <ShareButton
           isActive={menuActive}
@@ -148,4 +146,4 @@ const SocialLink = styled(ShareButton)`
     isActive ? `${(-1) ** position * Math.ceil(position / 2) * 50}px` : "0"};
   top: ${({ isActive }) => (isActive ? `50px` : "0")};
   box-shadow: ${({ isActive }) => (isActive ? `0 4px 10px 0 gray` : `0`)};
-  ;
+  ;`
