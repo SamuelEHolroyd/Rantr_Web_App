@@ -15,12 +15,15 @@ export class CreateThreadFormComponent {
   imageFile: File | null = null;
   loggedIn = false;
 
+  // Constructor for the component that takes AngularFirestore, AngularFireAuth,
+  // AngularFireStorage and Router as dependencies
   constructor(
     private storage: AngularFireStorage,
     private firestore: AngularFirestore,
     private router: Router,
     private afAuth: AngularFireAuth
   ) {
+    // Check if a user is logged in
     this.afAuth.authState.subscribe((user) => {
       this.loggedIn = !!user;
       if (!this.loggedIn) {
@@ -30,10 +33,13 @@ export class CreateThreadFormComponent {
     });
   }
 
+  // Sets the imageFile propety to the file selected by the user
   onFileSelected(event: any): void {
     this.imageFile = event.target.files[0];
   }
 
+  // Returns the username of the user with the specificed user id
+  // userId is the Id assigned to a users account when created
   async getUsername(userId: string): Promise<string> {
     const userDocSnap = await firstValueFrom(this.firestore.collection('users').doc(userId).get());
     if (userDocSnap.exists) {
@@ -43,23 +49,30 @@ export class CreateThreadFormComponent {
     }
   }
 
-
+  // When the form is submitted, stores the data entered as a post in the Firestore
+  // Routes the user to my-threads page when finished
   async onSubmit(postText: string, event: Event) {
     event.preventDefault();
 
+    // Check if an image file has been selected
+    // If not, prompt user to select an image file
     if (!this.imageFile) {
       alert('Please select an image to upload.');
       return;
     }
 
+    // Get the current user
     const user = await this.afAuth.currentUser;
     if (!user) {
       alert('User not found.');
       return;
     }
+
+    // Get the current user's userId and username 
     const userId = user.uid;
     const username = await this.getUsername(userId);
 
+    // Upload the image selected to Firebase Storage and store the post data in Firestore 
     const filePath = `images/${new Date().getTime()}_${this.imageFile.name}`;
     const fileRef = this.storage.ref(filePath);
     const task = this.storage.upload(filePath, this.imageFile);

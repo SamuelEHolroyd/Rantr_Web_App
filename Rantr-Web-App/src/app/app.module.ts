@@ -18,7 +18,6 @@ import { CreateThreadFormComponent } from './components/create-thread-form/creat
 import { SettingLayoutComponent } from './layouts/settings-sidebar/setting-layout.component';
 import { SecurityAndAccountAccessComponent } from './layouts/settings-sidebar/security-and-account-access/security-and-account-access.component';
 import { PrivacyAndSafetyComponent } from './layouts/settings-sidebar/privacy-and-safety/privacy-and-safety.component';
-import { NotificationsComponent } from './layouts/settings-sidebar/notifications/notifications.component';
 import { AboutComponent } from './layouts/settings-sidebar/about/about.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -49,7 +48,6 @@ import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
     CreateThreadFormComponent,
     SecurityAndAccountAccessComponent,
     PrivacyAndSafetyComponent,
-    NotificationsComponent,
     AboutComponent,
     ThreadDisplayCardComponent,
     SettingsNavbarComponent

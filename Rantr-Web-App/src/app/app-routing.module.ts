@@ -11,10 +11,8 @@ import { SettingLayoutComponent } from './layouts/settings-sidebar/setting-layou
 import { SecurityAndAccountAccessComponent } from './layouts/settings-sidebar/security-and-account-access/security-and-account-access.component';
 import { AboutComponent } from './layouts/settings-sidebar/about/about.component';
 import { PrivacyAndSafetyComponent } from './layouts/settings-sidebar/privacy-and-safety/privacy-and-safety.component';
-import { NotificationsComponent } from './layouts/settings-sidebar/notifications/notifications.component';
 
 const routes: Routes = [
-  {path:'profile', component: HomepageLayoutComponent},
   {path:'create-account', component: CreateAccountLayoutComponent},
   {path:'recommended-threads', component: RecommendedThreadsLayoutComponent},
   {path:'my-threads', component: MyThreadsLayoutComponent},
@@ -24,7 +22,6 @@ const routes: Routes = [
   {path:'SecurityandAccountAcesss', component: SecurityAndAccountAccessComponent},
   {path:'About', component: AboutComponent},
   {path:'PrivacyandSafety',component:PrivacyAndSafetyComponent},
-  {path:'Notifications',component:NotificationsComponent},
 
 ];
 

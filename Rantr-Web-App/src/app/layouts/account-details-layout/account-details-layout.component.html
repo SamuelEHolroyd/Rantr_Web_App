@@ -3,22 +3,32 @@
 
 <div class="container">
   <div class="current-info">
+    <!--Display the current user's email-->
     <h4>Current Email: {{ email }}</h4>
+    <!--Display the current user's username-->
     <h4>Current Username: {{ username }}</h4>
   </div>
 
+  <!--When the form is submitted call the update user information method-->
+  <!--Updates the user's information to the data entered in form-->
   <form (ngSubmit)="updateUserInfo()" #userInfoForm="ngForm">
     <div class="form-group">
       <label for="email">New Email address</label>
+      <!--Set new email as required field-->
+      <!--Set ngModel as newEmail to store value entered into newEmail string variable-->
       <input type="email" class="form-control" id="email" name="email" [(ngModel)]="newEmail" required>
     </div>
     <div class="form-group">
+      <!--Set new username as required field-->
+      <!--Set ngModel as newUsername to store value entered into newUsername string variable-->
       <label for="username">New Username</label>
       <input type="text" class="form-control" id="username" name="username" [(ngModel)]="newUsername" required>
     </div>
     <div class="form-group">
       <label for="password">New Password</label>
       <input [type]="showPassword ? 'text' : 'password'" class="form-control" id="password" name="password" [(ngModel)]="password">
+      <!--When button is clicked call toggle show password method-->
+      <!--If show password is true, show password, if false, hide password-->
       <button (click)="toggleShowPassword()" type="button">{{ showPassword ? 'Hide' : 'Show' }} Password</button>
     </div>
     <button type="submit" class="btn btn-primary">Update</button>
