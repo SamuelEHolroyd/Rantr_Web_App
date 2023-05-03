@@ -20,3 +20,6 @@ header{
     width: 75%;
     /* Additional styles for the main content go here */
   }
+  .row{
+    padding:1%;
+  }
