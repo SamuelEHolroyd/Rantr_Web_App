@@ -21,3 +21,13 @@ header{
     width: 75%;
     /* Additional styles for the main content go here */
   }
+  .row{
+    padding:1%;
+    text-decoration: none;
+    color:black;
+
+
+  }
+  .listitem{
+    margin-left:3%;
+  }
