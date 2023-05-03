@@ -3,46 +3,59 @@
     <div class="col-sm-5">
       <div class="card">
         <div class="card-header">
+          <!--Display the username of the user that created the post-->
           <span class="username">{{ post.username }}</span>
+          <!--Display the date and time that post was created-->
           <div class="text">{{ post.timestamp.toDate() | date: 'short' }}
               <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               </button>
                   <ul class="dropdown-menu">
+                    <!--Call the delete post method when user clicks the delete post button-->
                     <li><button (click)="deletePost(post.postId)" type="submit" class="dropdown-item btn me-3">
                       Delete Post
-                    </button></li>
-                    <li><button type="submit" class="dropdown-item btn me-3">
-                      Share
-                    </button></li>
-                    <li><button type="submit" class="dropdown-item btn me-3">
-                      Report
                     </button></li>
                   </ul>
           </div>
         </div>
+        <!--Display the post test-->
         <div class="card-body">{{ post.postText }}</div>
         <div class="row justify-content-center">
+          <!--Display the post image-->
           <img class="card-img-bottom" [src]="post.postImg" alt="">
         </div>
         <div class="card-footer text-center">
+            <!--Display the value for the thumbs up reaction for post-->
+            <!--If button is clicked, call method to update the thumbs up reaction value-->
             <button (click)="updateCountThumbUp(post.postId)" type="submit" class="btn me-3">👍
               <div class="text">{{post.countThumbUp}}</div>
             </button>
+            <!--Display the value for the thumbs down reaction for post-->
+            <!--If button is clicked, call method to update the thumbs down reaction value-->
             <button (click)="updateCountThumbDown(post.postId)" type="submit" class="btn me-3">👎
               <div class="text">{{post.countThumbDown}}</div>
             </button>
+            <!--Display the value for the smiling face reaction for post-->
+            <!--If button is clicked, call method to update the smiling face reaction value-->
             <button (click)="updateCountSmile(post.postId)" type="submit" class="btn me-3">😃
               <div class="text">{{post.countSmile}}</div>
             </button>
+            <!--Display the value for the straight face reaction for post-->
+            <!--If button is clicked, call method to update the straight face reaction value-->
             <button (click)="updateCountStraight(post.postId)" type="submit" class="btn me-3">😑
               <div class="text">{{post.countStraight}}</div>
             </button>
+            <!--Display the value for the laughing face reaction for post-->
+            <!--If button is clicked, call method to update the laughing face reaction value-->
             <button (click)="updateCountLaugh(post.postId)" type="submit" class="btn me-3">😂
               <div class="text">{{post.countLaugh}}</div>
             </button>
+            <!--Display the value for the questioning face reaction for post-->
+            <!--If button is clicked, call method to update the questioning reaction value-->
             <button (click)="updateCountQuestion(post.postId)" type="submit" class="btn me-3">🤨
               <div class="text">{{post.countQuestion}}</div>
             </button>
+            <!--Display the value for the heart eyes reaction for post-->
+            <!--If button is clicked, call method to update the heart eyes reaction value-->
             <button (click)="updateCountHeart(post.postId)" type="submit" class="btn">😍
               <div class="text">{{post.countHeart}}</div>
             </button>
