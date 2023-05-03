@@ -1,7 +1,11 @@
 <app-profile-navbar></app-profile-navbar>
 <app-threadlist-navbar></app-threadlist-navbar>
+    <!--Check if there are nay values in userPosts-->
+    <!--If so, assign values to posts varaible-->
     <ng-container *ngIf="userPosts | async as posts">
       <div class="pb-5">
+        <!--Loop through all the posts in the array posts-->
+        <!--Display the data from the posts using the thread display card component-->
         <app-thread-display-card *ngFor="let post of posts" [post]="post"></app-thread-display-card>
       </div>
     </ng-container>
