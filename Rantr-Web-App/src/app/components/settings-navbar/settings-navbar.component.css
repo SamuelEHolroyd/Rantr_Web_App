@@ -1,7 +1,6 @@
 .rantr {
     font-size: 35pt;
     transform: rotate(20deg);
-    margin-left: 50px;
 }
 .navbar{
     height: 110px;
@@ -18,4 +17,5 @@
   }
   .dropdown{
     margin-right: 100px;
+    justify-content: flex-end;
   }
